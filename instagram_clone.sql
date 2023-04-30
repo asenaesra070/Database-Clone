@@ -50,6 +50,7 @@ CREATE TABLE likes (
     PRIMARY KEY(user_id, photo_id)
 );
 select *from likes;
+-- Fallows fully connect with follower and and fallowee and thir id can not be null
 CREATE TABLE follows (
     follower_id INTEGER NOT NULL,
     followee_id INTEGER NOT NULL,
@@ -58,8 +59,9 @@ CREATE TABLE follows (
     FOREIGN KEY(followee_id) REFERENCES users(id),
     PRIMARY KEY(follower_id, followee_id)
 );
-select *from follows;
 
+select *from follows;
+-- tags help us get our content in front of more people here we need a id too like 1 2 3... 
 CREATE TABLE tags (
   id INTEGER AUTO_INCREMENT PRIMARY KEY,
   tag_name VARCHAR(255) UNIQUE,
