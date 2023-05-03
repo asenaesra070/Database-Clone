@@ -19,12 +19,12 @@ WHERE photos.id IS NULL;
 
 
 -- here we can also find a person (username) who has the highest likes(count of likes)
-select * from likes;
-select * from photos;
+SELECT * FROM likes;
+SELECT * FROM photos;
 
-select username,photos.image_url,photos.id,
-count(*) AS total
-from photos
+SELECT username,photos.image_url,photos.id,
+COUNT(*) AS total
+FROM photos
 INNER JOIN likes
     ON likes.photo_id = photos.id
 INNER JOIN users
